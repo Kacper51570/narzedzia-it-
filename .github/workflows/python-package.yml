@@ -3,7 +3,7 @@ name: workflow
 on:
   push:
     branches:
-      - main
+      - master
   schedule:
     - cron: "0 0 * * 0" 
   workflow_dispatch:
@@ -42,6 +42,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/narzedzia.exe
-          asset_name: narzedzia.exe
+          asset_path: dist/main.exe
+          asset_name: main.exe
           asset_content_type: application/octet-stream
